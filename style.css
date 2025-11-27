@@ -1,0 +1,289 @@
+/* RESET */
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* MENGHILANGKAN SPASI SAMPING */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(to bottom, #ffffff, #f7f7f7);
+    padding-top: 110px; /* ruang untuk navbar floating */
+    color: #333;
+}
+
+/* NAVBAR FLOATING */
+.floating-navbar {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    z-index: 1000;
+}
+
+.brand {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #FF9800;
+}
+
+.nav-center {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.nav-center input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 18px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.nav-center input:focus {
+    border-color: #ff9800;
+}
+
+.nav-right {
+    display: flex;
+    gap: 12px;
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* CATEGORY SECTION */
+.category-section {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid #FF9800;
+    background: white;
+    color: #FF9800;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.category-btn.active,
+.category-btn:hover {
+    background: #FF9800;
+    color: white;
+}
+
+/* PRODUCT GRID */
+.product-section {
+    margin: 30px auto;
+    width: 92%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 26px;
+    padding: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: 0.25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+}
+
+.product-img {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.product-desc {
+    font-size: 0.9rem;
+    margin-top: 4px;
+    opacity: 0.75;
+}
+
+/* MODAL ZOOM */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 75%;
+    border-radius: 14px;
+}
+
+.close {
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.prev, .next {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    font-size: 32px;
+    color: white;
+    padding: 10px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.2s ease;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    margin: 60px 0 120px;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* ================================
+   NEW CONTACT BUTTON STYLE
+   Orange text → White on hover
+================================ */
+
+.contact-btn {
+    padding: 12px 22px;
+    border-radius: 20px;
+
+    background: white;
+    border: 1px solid #FF9800;
+
+    color: #FF9800;     /* WARNA TEKS AWAL ORANYE */
+    font-weight: 600;
+
+    text-decoration: none;
+    box-shadow: 0 5px 16px rgba(0,0,0,0.1);
+    transition: 0.25s ease-out;
+}
+
+.contact-btn:hover {
+    background: #FF9800;
+    color: white;      /* TEKS JADI PUTIH */
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.55),
+                0 0 35px rgba(255, 140, 0, 0.25);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .floating-navbar {
+        padding: 12px 14px;
+        border-radius: 18px;
+    }
+
+    .brand {
+        font-size: 1.1rem;
+    }
+
+    .nav-center input {
+        padding: 8px 12px;
+    }
+
+    .product-section {
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    }
+}
+
+/* ==================================
+INTERACTIVE BUTTON (Glass + Magnet)
+================================== */
+
+.category-btn,
+.contact-btn {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(14px);
+    border-radius: 16px;
+    transition: 0.25s ease-out;
+}
+
+/* Glow saat hover */
+.category-btn:hover,
+.contact-btn:hover {
+    box-shadow: 0 0 18px rgba(255, 140, 0);
+}
+
+/* Magnetic class */
+.category-btn.magnet-hover,
+.contact-btn.magnet-hover {
+    transition: transform 0.12s ease-out;
+}
+
+/* ==================================
+   Upgrade Effect – Glow + Motion
+================================== */
+
+.category-btn:hover,
+.contact-btn:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.55),
+                0 0 35px rgba(255, 140, 0, 0.25);
+}
+
+.category-btn.magnet-hover,
+.contact-btn.magnet-hover {
+    box-shadow: 0 0 25px rgba(255, 140, 0, 0.55),
+                0 0 45px rgba(255, 140, 0, 0.25);
+    transition: transform 0.12s ease;
+}

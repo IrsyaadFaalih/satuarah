@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Satu Arah Merchandise</title>
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR FLOATING -->
+    <nav class="floating-navbar">
+        <div class="nav-left">
+            <h2 class="brand">Satu Arah</h2>
+        </div>
+
+        <div class="nav-center">
+            <input type="text" id="searchInput" placeholder="Search products..." />
+        </div>
+    </nav>
+
+    <!-- CATEGORY FILTER -->
+    <section class="category-section">
+        <button class="category-btn active" data-category="all">All</button>
+        <button class="category-btn" data-category="tshirt">T-shirt</button>
+        <button class="category-btn" data-category="totebag">Totebag</button>
+        <button class="category-btn" data-category="keychain">Keychain</button>
+    </section>
+
+    <!-- PRODUCT GRID -->
+    <section class="product-section">
+
+        <!-- T-SHIRT -->
+        <div class="product-card" data-category="tshirt">
+            <img src="images/tshirt1.jpg" class="product-img"
+                 data-images='["images/tshirt1.jpg","images/tshirt2.jpg","images/tshirt3.jpg"]' />
+            <h3 class="product-title">T-shirt</h3>
+            <p class="product-desc">T-shirt premium bahan katun halus dan nyaman dipakai.</p>
+        </div>
+
+        <!-- TOTEBAG -->
+        <div class="product-card" data-category="totebag">
+            <img src="images/totebag1.jpg" class="product-img"
+                 data-images='["images/totebag1.jpg","images/totebag2.jpg","images/totebag3.jpg"]' />
+            <h3 class="product-title">Totebag</h3>
+            <p class="product-desc">Totebag kanvas tebal, cocok untuk aktivitas sehari-hari.</p>
+        </div>
+
+        <!-- KEYCHAIN 1 -->
+        <div class="product-card" data-category="keychain">
+            <img src="images/keychain1a.jpg" class="product-img"
+                 data-images='["images/keychain1a.jpg","images/keychain1b.jpg","images/keychain1c.jpg"]' />
+            <h3 class="product-title">Keychain 1</h3>
+            <p class="product-desc">Gantungan kunci elegan dengan desain eksklusif.</p>
+        </div>
+
+        <!-- KEYCHAIN 2 -->
+        <div class="product-card" data-category="keychain">
+            <img src="images/keychain2a.jpg" class="product-img"
+                 data-images='["images/keychain2a.jpg","images/keychain2b.jpg","images/keychain2c.jpg"]' />
+            <h3 class="product-title">Keychain 2</h3>
+            <p class="product-desc">Gantungan kunci desain ekspresif untuk gaya unikmu.</p>
+        </div>
+
+    </section>
+
+    <!-- PRODUCT ZOOM MODAL -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img id="modalImg" class="modal-content" />
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
+        <h2 class="contact-title">Hubungi Kami</h2>
+
+        <div class="contact-buttons">
+            <a href="https://wa.me/08886966340" class="contact-btn">WhatsApp</a>
+            <a href="mailto:satuarahofc@gmail.com" class="contact-btn">Email</a>
+            <a href="https://instagram.com/satuarah_ofc" class="contact-btn">Instagram</a>
+        </div>
+    </section>
+ <footer>
+    <p>© 2025 Irsyad Faalih. All Rights Reserved.</p>
+  </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>
